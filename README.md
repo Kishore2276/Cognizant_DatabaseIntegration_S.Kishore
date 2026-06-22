@@ -1,1 +1,0 @@
-# Cognizant_DatabaseIntegration_S.Kishore
