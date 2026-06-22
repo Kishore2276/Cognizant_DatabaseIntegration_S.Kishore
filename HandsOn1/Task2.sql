@@ -4,31 +4,28 @@
 -- ==========================================
 
 -- 1NF (First Normal Form)
--- All columns contain atomic values.
--- Example:
--- phone_number stores only one value.
--- No multiple phone numbers are stored in a single column.
--- Therefore, the database satisfies 1NF.
+-- All attributes contain atomic values.
+-- Each column stores a single value only.
+-- For example, phone_number stores one phone number per patient.
+-- No repeating groups or multi-valued attributes exist.
+-- Therefore, the schema satisfies 1NF.
 
 -- 2NF (Second Normal Form)
--- Every non-key attribute depends fully
--- on the primary key.
--- Example:
--- In appointments table, appointment_date,
--- appointment_time and status depend completely
--- on appointment_id.
--- Therefore, the database satisfies 2NF.
+-- All non-key attributes are fully dependent on the primary key.
+-- In the appointments table, appointment_date,
+-- appointment_time and status depend entirely on appointment_id.
+-- No partial dependencies exist.
+-- Therefore, the schema satisfies 2NF.
 
 -- 3NF (Third Normal Form)
 -- No transitive dependencies exist.
--- Example:
--- department_name is stored only in departments table
--- and linked through department_id in doctors table.
--- department_name is not directly stored in doctors table.
--- Therefore, the database satisfies 3NF.
+-- Department details are stored in the departments table
+-- and referenced using department_id in the doctors table.
+-- Department information is not duplicated in doctors.
+-- Therefore, the schema satisfies 3NF.
 
 -- 3NF Analysis for Appointments Table
 -- appointment_date, appointment_time and status
--- depend only on appointment_id.
+-- depend directly on appointment_id.
 -- No non-key attribute depends on another non-key attribute.
 -- Therefore, the appointments table satisfies 3NF.
